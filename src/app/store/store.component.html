@@ -1,0 +1,7 @@
+<h3> Store </h3>
+
+<div *ngFor="let beer of beers" (click)="goToDetailPage(beer)" class="panel panel-default">
+  <div class="panel-body">
+    <p>{{beer.brewery}} - {{beer.name}}</p>
+  </div>
+</div>

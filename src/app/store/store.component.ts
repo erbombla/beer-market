@@ -1,34 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Beer } from '../beer.model';
 import { Router } from '@angular/router';
+import { BeerService } from '../beer.service';
 
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
-  styleUrls: ['./store.component.css']
+  styleUrls: ['./store.component.css'],
+  providers: [BeerService]
 })
 
-export class StoreComponent {
+export class StoreComponent implements OnInit {
+  beers: Beer[];
 
-  constructor(private router: Router){}
+constructor(private router: Router, private beerService: BeerService){}
 
-  beers: Beer[] = [
-    new Beer("Knee Deep Brewing Co.", "Hoptologist",
-      "Double India Pale Ale", 8.99, 1),
-    new Beer("Epic Brewing Company", "Son of a Baptist",
-      "Coffee Stout", 5.99, 2),
-    new Beer("Voodoo Brewery", "HooDoo",
-      "India Pale Ale", 9.99, 3),
-    new Beer("Modern Times Beer", "Haunted Stars",
-      "Imperial Rye Porter", 8.99, 4),
-    new Beer("Brasserie St. James", "Quadrophobia",
-      "Belgian Quadruple", 12.99, 5),
-    new Beer("Hoppin' Frog", "Barrel Aged B.O.R.I.S",
-      "Barrel Aged Imperial Stout", 14.99, 6)
-  ];
+ngOnInit() {
+  this.beers = this.beerService.getBeers();
+}
 
- goToDetailPage(clickedBeer: Beer) {
-   this.router.navigate(['beers', clickedBeer.id]);
+goToDetailPage(clickedBeer: Beer) {
+  this.router.navigate(['beers', clickedBeer.id]);
  };
- 
+
 }

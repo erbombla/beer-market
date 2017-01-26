@@ -1,5 +1,7 @@
 <h3> Store </h3>
 
+<p class ="lead">Click a beer for more information</p>
+
 <div *ngFor="let beer of beers" (click)="goToDetailPage(beer)" class="panel panel-default">
   <div class="panel-body">
     <p>{{beer.brewery}} - {{beer.name}}</p>

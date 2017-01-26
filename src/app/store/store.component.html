@@ -3,7 +3,7 @@
 <p class ="lead">Click a beer for more information</p>
 <div class="row">
   <div class="col-md-6">
-    <div *ngFor="let beer of beers" (click)="goToDetailPage(beer)" class="panel panel-default">
+    <div *ngFor="let beer of beers | async" (click)="goToDetailPage(beer)" class="panel panel-default">
       <div class="panel-body">
         <h4>{{beer.brewery}} - {{beer.name}}</h4>
       </div>

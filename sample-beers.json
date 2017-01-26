@@ -1,0 +1,10 @@
+{ "beer": [{
+    "brewery": "Knee Deep Brewing Co.",
+    "name": "Hoptologist",
+    "style":"Double India Pale Ale",
+    "description": "In their popular 9% ABV, 102 IBU Hoptologist DIPA they put their mad skills on full display with a honey melon-orange rind flavor crescendo. Is it aggressive? Sure. Is it damn tasty? Damn straight.",
+    "price": 8.99,
+    "id": 1
+    }
+  ]
+}

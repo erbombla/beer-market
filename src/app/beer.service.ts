@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Beer } from './beer.model';
 import { BEERS } from './mock-beers';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Injectable()
 export class BeerService {
+  beers: FirebaseListObservable<any[]>;
 
-  constructor() { }
+  constructor(private angularFire: AngularFire) {
+    this.beers = angularFire.database.list('beer');
+  }
 
   getBeers() {
-    return BEERS;
+    return this.beers; 
   }
 
   getBeerById(beerId: number){

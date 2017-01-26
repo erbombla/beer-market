@@ -12,14 +12,18 @@ export class BeerService {
   }
 
   getBeers() {
-    return this.beers; 
+    return this.beers;
+  }
+
+  addBeer(newBeer: Beer) {
+    this.beers.push(newBeer);
   }
 
   getBeerById(beerId: number){
-    for (var i = 0; i <= BEERS.length - 1; i++) {
-      if (BEERS[i].id === beerId) {
-        return BEERS[i];
-      }
-    }
+    // for (var i = 0; i <= BEERS.length - 1; i++) {
+    //   if (BEERS[i].id === beerId) {
+    //     return BEERS[i];
+    //   }
+    // }
   }
 }
